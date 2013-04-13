@@ -22,6 +22,7 @@ class Game_Board:
   # player piece counts dictionary
   white = {}
   black = {}
+  
   """
   Initialize game board.
   """
@@ -48,12 +49,15 @@ class Game_Board:
      print self.game_board.shape
      # make sure move is within bounds  of the gameboard
      if yd < self.game_board.shape[0] or xd < self.game_board.shape[1] or yd > 0 or xd > 0:
-       
+       pass
        if( self.game_board[y][x] != 0 ):
-          # then move the piece! otherwise do nothing.
+        pass  # then move the piece! otherwise do nothing.
      
-     
-    
+  
+  #remove a piece,p1, from its location on the board and replace it with p1
+  # location is a tuple in the form of (y,x)
+  def remove_piece(self,p1,p2,location):
+    self.game_board[location[0]][location[1]] = p1
     
   def get_board(self):
     return game_board
