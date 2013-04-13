@@ -7,7 +7,7 @@ import numpy as np
 # python class that holds the current state of the game board for minitchess
 
 class Game_Board:
-  """ PEICE REPRESENTATIONS
+  """ PIECE REPRESENTATIONS
       1 = pawn
       2 = rook
       3 = bishop
