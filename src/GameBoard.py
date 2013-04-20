@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+"""
+Author George Dittmar copywrite 2013
+"""
 import numpy as np
 
 
