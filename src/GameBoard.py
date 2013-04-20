@@ -36,7 +36,7 @@ class Game_Board:
     self.black = {1:5,2:2,3:2,4:2,5:1,6:1}
     
     
-    # generate default board state with pieces in place
+  # generate default board state with pieces in place
   # move_to and move_from are tuples in the form of (y,x) due to how numpy creates multidimensional arrays  
   def move_piece(self,move_to,move_from):
      """
@@ -63,13 +63,26 @@ class Game_Board:
     rowBack = row
     colBack = col
     
-    while(in_bounds(row,col)):
+    while(True):
       
       #move the piece at least 1 space.
-        pass
+    
       row = row+drow
       col = col+dcol
       
+      #stopping cases. Either we are no longer on the board; have run into an enemy piece.
+      if !in_bounds(row,col):
+        break
+      
+      if self.game_board[row][col] != 0:
+        if !is_friend(row,col):
+          # this is the stopping case for a move that takes a piece from the opponent
+          self.game_board[row][col] = self.game_board[rowBack][colBack]
+          self.game_board[rowBack][colBack] = 0
+          
+          # check to see who is on move and remove the piece from that players set of pieces.
+        pass
+        
       if isSingle:
         break
 
